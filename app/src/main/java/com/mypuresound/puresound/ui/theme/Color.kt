@@ -1,4 +1,4 @@
-package com.example.puresound.ui.theme
+package com.mypuresound.puresound.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

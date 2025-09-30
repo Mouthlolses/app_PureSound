@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.puresound"
+    namespace = "com.mypuresound.puresound"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.puresound"
+        applicationId = "com.mypuresound.puresound"
         minSdk = 29
         targetSdk = 36
         versionCode = 1
@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "21"
     }
     buildFeatures {
         compose = true

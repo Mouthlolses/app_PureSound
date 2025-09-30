@@ -1,4 +1,4 @@
-package com.example.puresound
+package com.mypuresound.puresound
 
 import org.junit.Test
 

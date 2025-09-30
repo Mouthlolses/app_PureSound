@@ -1,4 +1,4 @@
-package com.example.puresound
+package com.mypuresound.puresound
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,13 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
-import com.example.puresound.ui.theme.PureSoundTheme
+import com.mypuresound.puresound.ui.theme.PureSoundTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -35,14 +34,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PureSoundTheme {
-                Scaffold(modifier = Modifier
-                    .statusBarsPadding()
-                    .navigationBarsPadding()
+                Scaffold(
+                    modifier = Modifier.Companion
+                        .statusBarsPadding()
+                        .navigationBarsPadding()
                 ) { innerPadding ->
                     Greeting(
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .padding(innerPadding)
-                            .background(Color.Black)
+                            .background(Color.Companion.Black)
                     )
                 }
             }
@@ -51,10 +51,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier.Companion) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.Companion.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         VideoPlayer()
@@ -85,7 +85,7 @@ fun VideoPlayer() {
                 this.player = player
             }
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.Companion.fillMaxSize()
     )
     DisposableEffect(Unit) {
         onDispose {
