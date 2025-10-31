@@ -1,14 +1,12 @@
 package com.mypuresound.puresound.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Done
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -25,9 +23,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
+import com.mypuresound.puresound.R
 import kotlinx.coroutines.delay
 
 @Composable
@@ -69,7 +69,12 @@ fun AudioPlayer(
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("🎧 Tocando áudio", style = MaterialTheme.typography.titleMedium)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Text("🎧 Tocando agora", style = MaterialTheme.typography.titleMedium)
+        }
 
         Spacer(Modifier.height(12.dp))
 
@@ -95,7 +100,7 @@ fun AudioPlayer(
             isPlaying = !isPlaying
         }) {
             Icon(
-                imageVector = if (isPlaying) Icons.Default.Done else Icons.Default.PlayArrow,
+                painter = if (isPlaying) painterResource(R.drawable.ic_action_play_pause) else painterResource(R.drawable.ic_action_play_arrow),
                 contentDescription = "Play/Pause",
                 modifier = Modifier.size(64.dp)
             )
