@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
@@ -33,7 +34,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun AudioPlayer(
     audioUrl: String = "https://storage.googleapis.com/exoplayer-test-media-0/play.mp3",
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
 
@@ -100,7 +101,9 @@ fun AudioPlayer(
             isPlaying = !isPlaying
         }) {
             Icon(
-                painter = if (isPlaying) painterResource(R.drawable.ic_action_play_pause) else painterResource(R.drawable.ic_action_play_arrow),
+                painter = if (isPlaying) painterResource(R.drawable.ic_action_play_pause) else painterResource(
+                    R.drawable.ic_action_play_arrow
+                ),
                 contentDescription = "Play/Pause",
                 modifier = Modifier.size(64.dp)
             )
